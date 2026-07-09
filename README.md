@@ -51,3 +51,15 @@ func main() {
 ```
 var variable_name dataType = value
 ```
+
+## Type inference
+- We make use of `:=` to infere type based on the value
+- Example: number := 1 - This is int and username := "" - This is a string. The default inference for float is float64.
+- Though its inferred it can't be changed as its a static type language.
+- With `fmt.Printf` we can make use of **%T** to get the type of the variable.
+- We can convert by using specific types with brackets for type conversion. Example: float64(num) - num is int
+
+## Constant variables
+- We use the `const` keyword for making constant variables.
+
+*Note*: = vs :=. Use `=` at package level and use `:=` can be used only inside functions for type inference.
