@@ -63,3 +63,25 @@ var variable_name dataType = value
 - We use the `const` keyword for making constant variables.
 
 *Note*: = vs :=. Use `=` at package level and use `:=` can be used only inside functions for type inference.
+
+## Interpolation
+- Here we can make use of `Printf` or `Sprintf` where Printf is used for printing formatted string to console and Sprintf will return the formatted string
+- Types used are as follows:
+```
+%v - For any value can be used
+%d or variations - For int based values
+%f or variations (%.f[for rounding], %.nf [For how many decimals]) - For float64 and float32
+```
+
+## Comparison operators
+- == : For comparison
+- != : For not equal to
+- ">" : Greater than
+- "<" : Smaller than
+- ">=" : Greater than equal to
+- "<=" : Smaller than  equal to
+
+## Unique Conditional
+```
+if initialize; compare {condition} - When varible is not used other than here
+```
