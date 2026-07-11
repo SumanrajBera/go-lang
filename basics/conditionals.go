@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main()  {
+func conditional()  {
 	const age int = 5
 
 	if age >= 18 {

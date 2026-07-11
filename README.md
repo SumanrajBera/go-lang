@@ -85,3 +85,4 @@ var variable_name dataType = value
 ```
 if initialize; compare {condition} - When varible is not used other than here
 ```
+*Note*: We can pass functions in another functions just like callbacks we use in JS.
