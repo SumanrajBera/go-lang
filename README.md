@@ -86,3 +86,26 @@ var variable_name dataType = value
 if initialize; compare {condition} - When varible is not used other than here
 ```
 *Note*: We can pass functions in another functions just like callbacks we use in JS.
+*Note*: In Go, variables are passed value and not by reference.
+*Note*: In Go, it doesn't allow us to have unused variables
+
+## Ignoring return values
+- This is important sometimes because compiler can throw error due to unused variables 
+```
+func getPoint() (x int, y int) {
+    return 3, 4
+}
+x, _ := getPoint() // Here we are telling we know there's a value but we ignore it
+```
+
+*Note*: We can return named values as it helps with documentation and improving readability.
+
+## Naked return (Also called implicit return)
+```
+func getPoint() (x, y int) {
+    // Here when we return we will get x and y values this is called naked return
+	return
+}
+```
+
+*Note*: Guard clauses is an early return from the function when a given condition is met.
