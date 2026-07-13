@@ -11,7 +11,7 @@ func concat2(s1, s2 string) string {
 	return s1 + s2
 }
 
-func main() {
+func functionInGo() {
 	fmt.Println("This is the main function")
 	fmt.Println(concat("This is", " a function call"))
 }
