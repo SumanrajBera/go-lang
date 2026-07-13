@@ -12,7 +12,7 @@ func test(m messageSend) {
 	fmt.Println("This message was sent by", m.id)
 }
 
-func main() {
+func basicStruct() {
 	test(messageSend{
 		id: 123456,
 		message: "Hello Brother. How are you?",
