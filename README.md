@@ -109,3 +109,45 @@ func getPoint() (x, y int) {
 ```
 
 *Note*: Guard clauses is an early return from the function when a given condition is met.
+
+## Structs 
+- A struct is used to define structured data and is used for grouping variables pf different data types togeather.
+```
+type struct_name struct {
+    // Group of variables
+}
+```
+- Nested Structs are structs within structs
+```
+type sendMessage struct {
+	message  string
+	sender   user
+	receiver user
+}
+
+type user struct {
+	id   int
+	name string
+}
+```
+- Anonymous structs and these are structs which we declare directly or declare and assign directly
+```
+// Direct declaration
+type car struct {
+    Wheel struct{
+        pressure float32
+        company string
+    }
+}
+
+// Declare and assign
+myCar := struct {
+    name string
+    engine string
+    bags int
+} {
+    name: "Mercedes",
+    engine: "New"
+    bags: 4
+}
+```
