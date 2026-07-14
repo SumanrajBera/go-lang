@@ -151,3 +151,16 @@ myCar := struct {
     bags: 4
 }
 ```
+- Embedded struct is the struct that allows us to make another struct become part of the struct we have embedded it in.
+```
+type vehicle struct {
+    model string
+    name string
+}
+
+type truck struct {
+    // vehicle is embedded so to access model we just need truck.model and not truck.vehicle.model
+    vehicle
+    tyres int
+}
+```

@@ -20,7 +20,7 @@ func testInNestedStruct(m sendMessage) {
 	fmt.Println("===================================")
 }
 
-func main() {
+func nestedStruct() {
 	var user1 = user{
 		id: 12344,
 		name: "Sumanraj",
