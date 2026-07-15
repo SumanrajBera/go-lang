@@ -164,3 +164,40 @@ type truck struct {
     tyres int
 }
 ```
+
+## Interface
+- Interfaces in GO are abstract methods (we don't use keyword abstract rather `name and return type`) and has implicit implementation (we don't use implements keyword).
+- We need to apply all the methods defined in the interface or else the code will fail.
+```
+// No abstract keyword
+type message interface {
+    sendMessage() string
+}
+
+type report struct {
+    id int
+    message string
+}
+
+func (r report) sendMessage() string {
+    return r.message
+}
+
+func main() {
+    newReport := report {
+        id: 123455,
+        message: "Hello World",
+    }
+    fmt.Println(newReport.sendMessage())
+}
+
+```
+- Empty interface `interface{}` is implemented by every type and we can't use it. These are use to assign values on the go like incoming data from an API which we might not know.
+- We can also specify named arguments in the interface method's arguments.
+- Type assertion can be used to check if the specified type is part of the interface or not.
+```
+var i interface{} = "Hello"
+
+s, ok := i.(string) // This will check if interface has type string and if it has then true will be assigned to ok else false
+```
+*Note*: Keep interfaces small. Interfaces should not be aware of the types they satisfy (I have a vehicle interface and we have a method called isCar `This shouldn't happen because we may then define isTruck, isBike etc.` rather create a sub-interface with the vehicle interface)
