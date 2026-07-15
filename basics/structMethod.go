@@ -17,6 +17,6 @@ var r = rect{
 	height: 50,
 }
 
-func main() {
+func structMethod() {
 	fmt.Println(r.area())
 }
