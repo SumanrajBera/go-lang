@@ -201,3 +201,57 @@ var i interface{} = "Hello"
 s, ok := i.(string) // This will check if interface has type string and if it has then true will be assigned to ok else false
 ```
 *Note*: Keep interfaces small. Interfaces should not be aware of the types they satisfy (I have a vehicle interface and we have a method called isCar `This shouldn't happen because we may then define isTruck, isBike etc.` rather create a sub-interface with the vehicle interface)
+
+## Errors
+- We don't have try and catch rather so we don't throw error rather we return and check.
+```
+import (
+    "fmt"
+    "errors"
+    )
+
+func checkPassword(password string) (bool, error) {
+    if len(password) < 8 {
+        return false, errors.New("Password can't be smaller than 8 chars")
+    }
+
+    return true, nil
+}
+
+func main() {
+    correct, error := checkPassword("1234567")
+    if error != nil {
+        fmt.Println("Error", error)
+        return 
+    }
+    
+    if !correct {
+        fmt.Println("Password isn't correct")
+        return
+    }
+
+    fmt.Println("Password is correct")
+}
+```
+- We also have `Errorf` is the function that is used for formatting the error comes with `fmt` package.
+- We have the error interface and we can use it to create custom errors.
+```
+// Error interface built-in
+type error interface {
+    Error() string
+}
+```
+```
+// Custom error
+import (
+    "fmt"
+    "errors"
+)
+type userError struct {
+    name string
+}
+
+func (userErr userError) Error() string {
+    return fmt.Sprintf("%v username exists choose another", userErr.name)
+}
+```
