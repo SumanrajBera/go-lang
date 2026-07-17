@@ -255,3 +255,17 @@ func (userErr userError) Error() string {
     return fmt.Sprintf("%v username exists choose another", userErr.name)
 }
 ```
+
+## Loops
+- for loop - It is similar to for loop we see in other languages but it doesn't use parenthesis just like if-else
+```
+for INTIAL; CONDITION; AFTER {
+    // code 
+}
+```
+- There is **no** `while loop` in go and if we use our for loop with only condition it becomes a while loop.
+- There is `break` and `continue` statement for loop skiping and quiting.
+
+## Logical AND and OR
+- Logical AND is represented by `&&`
+- Logical OR is represented by `||`
