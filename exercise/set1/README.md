@@ -1,0 +1,3 @@
+# Exercise 
+- 01_Rectangle: Define a Rectangle struct with Width and Height (float64). Write methods Area() and Perimeter(). Write a method Scaled(factor float64) Rectangle that returns a new, scaled rectangle (don't modify the original).
+- 02_bank_account: Define an Account struct with Owner string and Balance float64. Write methods Deposit(amount float64) and Withdraw(amount float64) error. Withdraw should error if the amount is negative or exceeds the balance.
