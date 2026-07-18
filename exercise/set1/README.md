@@ -1,3 +1,21 @@
 # Exercise 
+## Basics
 - 01_Rectangle: Define a Rectangle struct with Width and Height (float64). Write methods Area() and Perimeter(). Write a method Scaled(factor float64) Rectangle that returns a new, scaled rectangle (don't modify the original).
 - 02_bank_account: Define an Account struct with Owner string and Balance float64. Write methods Deposit(amount float64) and Withdraw(amount float64) error. Withdraw should error if the amount is negative or exceeds the balance.
+- 03_custom_errors: Create a custom error type InsufficientFundsError implementing the error interface, storing the requested amount and available balance. Update Withdraw to return this custom error type and print a meaningful message.
+- 04_shapes: Define an interface Shape with Area() float64 and Perimeter() float64. Implement it for Rectangle and a new Circle. Write Describe(s Shape) to print a shape's area and perimeter. Write a function that takes []Shape and returns total area.
+- 05_speaker_mover: Define Speaker (Speak() string) and Mover (Move() string). Create Dog and Robot implementing both. Write a function accepting a value implementing both interfaces (use interface embedding to combine them).
+- 06_type_switch: Write PrintType(i interface{}) using a type switch to print what kind of value it received (int, string, bool, Shape, or "unknown type"). Test with several types, including a Shape.
+- 07_divide: Write Divide(a, b float64) (result float64, err error) with named returns, erroring if b == 0. Write SafeDivideAll(nums []float64, divisor float64) ([]float64, []error) that collects results and errors separately.
+- 08_struct_embedding: Define Animal with Name string and a method Describe() string. Create Dog embedding Animal, adding Breed string. Override Describe() on Dog to include the breed while still using the embedded data.
+- 09_error_wrapping: Write ReadConfig(valid bool) error returning a plain error when valid is false. Write LoadApp() that wraps the error with context using fmt.Errorf("...: %w", err). In main, use errors.Is/errors.Unwrap to check the underlying error.
+- 10_stringer: Implement fmt.Stringer (String() string) on a Point struct with X, Y int. Confirm fmt.Println(point) uses your custom formatting.
+  
+## Advanced
+ - 11_generic_stack: Implement Stack[T any] with Push(v T), Pop() (T, error), Peek() (T, error). Empty stack should return an error, not panic. Test with int and string stacks.
+- 12_generic_constraints: Write Sum[T int | float64](nums []T) T. Write Max[T constraints.Ordered](a, b T) T (define your own Ordered constraint with ~int | ~float64 | ~string if avoiding golang.org/x/exp/constraints). Test with different numeric types.
+- 13_embedded_interfaces: Define Reader (Read() string), Writer (Write(s string)), and ReadWriter embedding both. Implement File satisfying ReadWriter. Write Process(rw ReadWriter) that reads, modifies, and writes back. Write a second function needing only Reader, and pass File in to see it satisfies both.
+- 14_validator_system: Define Validator with Validate() error. Create EmailField, AgeField, PasswordField each implementing it with their own rules and custom errors. Write ValidateAll(validators []Validator) []error that collects only the failures.
+- 15_generic_pairs: Define Pair[K comparable, V any] with Key K and Value V. Write MapToPairs[K comparable, V any](m map[K]V) []Pair[K, V]. Bonus: write SortPairsByKey for a Pair[string, int] slice using sort.Slice.
+- 16_sentinel_errors: Define sentinel errors with errors.New (e.g. ErrNotFound, ErrUnauthorized). Write FetchResource(id int) (string, error) returning one depending on id. In the caller, use errors.Is to branch on which sentinel occurred.
+- 17_interface_satisfaction: Define two interfaces, Shape and NamedShape (which embeds Shape and adds Name() string). Write a function that accepts a Shape and, using a type assertion, checks whether the value also satisfies NamedShape — if so, print its name too. Test with one struct that only implements Shape and another that implements both.
