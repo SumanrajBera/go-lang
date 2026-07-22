@@ -269,3 +269,31 @@ for INTIAL; CONDITION; AFTER {
 ## Logical AND and OR
 - Logical AND is represented by `&&`
 - Logical OR is represented by `||`
+
+## Arrays
+- It is a fixed size collection of similar data types.
+```
+var array [3]int = [3]int{1,2,3}
+array := [3]int{1,2,3}
+array := [...]int{1,2,3}
+```
+- It is different from JS arrays as its not flexible and can only store upto defined size.
+
+## Slices
+- Its still rigid in terms of type but flexible on the side as we can store more than whatever limit we define. We can also make a shallow copy stroed using slice syntax.
+```
+s := []int{1, 2, 3}
+
+// Using make for performance and optimization (Used when we have a rough idea of size but not sure so we need flexibility)
+Syntax: make([]type, len , capacity)
+len - for number of elements currently in slice
+capacity - how much capacity it can hold before 'GO' needs to automatically allocate space
+s := make([]int, 3, 5) - we can skip capacity 
+
+// From array
+arr := [3]int{1, 2, 3}
+slice := arr[1:3] // Shallow copy from array from idx 1 to 2
+
+// For empty slice
+var slice []int  // slice is nil but we need to append to add items
+```
