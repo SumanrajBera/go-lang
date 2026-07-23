@@ -15,7 +15,7 @@ func (r report) sendMessage() string {
 	return r.message
 }
 
-func main() {
+func interfaceBasic() {
 	newReport := report{
 		id:      123445,
 		message: "This is my report on interfaces",
