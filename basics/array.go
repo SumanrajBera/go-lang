@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func arrays() {
 	array := [3]int{1, 2, 3}
 	fmt.Println(array)
 
