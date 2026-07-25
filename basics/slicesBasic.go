@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func slicesBasic() {
 	array := [3]int{1, 2, 3}
 	sliceOfArray := array[0:3]
 	// Here its just a shallow copy so if we make changes it will show up in original
