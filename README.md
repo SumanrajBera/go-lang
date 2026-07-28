@@ -302,7 +302,7 @@ var slice []int  // slice is nil but we need to append to add items
 Syntax: slice = append(slice, value1, value2, ...values)
 ```
 *Best Practice*: Whenever you append, append and assign to the same which can cause to some bugs. For example, if we don't mention capacity to slice and we append then every time and assign to a different slice its ok as its reallocation is happening in a new space but if capacity was mentioned then it will already have pre-allocated space and appending will only cause it to change the value in the same space.
-```
+```go
 // No cap allocation is different
 i := make([]int, 3)
 j := append(i, 4) // [0 0 0 4]
@@ -317,7 +317,7 @@ k := append(i,5) // [0 0 0 5]
 
 ## Variadic function (rest and spread operator)
 - Variadic functions are basically when we pass multiple arguments of smae type without a count.
-```
+```go
 // Sum of passed numbers
 function sum(nums ...float64) float64 {
     func sum(nums ...float64) float64 {
@@ -331,3 +331,15 @@ function sum(nums ...float64) float64 {
 ```
 *Note*: In the above example, as you can see I have made use of range for loop which is shorter version to go through all elements in an array.
 - By this we can also pass different interfaces to the function.
+
+## Maps
+- Maps are another data structures that is common in every language which is used to store elements in key-value pairs
+```go
+// Syntax
+agesMap := make(map[string]int)
+
+ages := map[string]int {
+    "henry": 20,
+    "matt": 21,
+}
+```
