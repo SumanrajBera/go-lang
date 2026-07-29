@@ -11,7 +11,7 @@ func sum(nums ...float64) float64 {
 	return res
 }
 
-func main() {
+func slicesDeepDive() {
 	nums := []float64{1, 28, 9.5, 7.6, 5.2, 7.9, 10.5}
 	fmt.Println(sum(nums...))
 }

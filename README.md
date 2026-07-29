@@ -343,3 +343,20 @@ ages := map[string]int {
     "matt": 21,
 }
 ```
+- Creating, accessing and updating values in a map
+```go
+// Creating and updating
+map["key"] = elem
+
+// Accessing
+fmt.Println(map["key"])
+```
+- Deleting key and value in a map
+```go
+delete(mao, "key")
+```
+- Check if a key exists in a map and get a value 
+```go
+value, ok = map["key"]
+// ok is boolean which is true if it exists and false if it doesn't
+```
