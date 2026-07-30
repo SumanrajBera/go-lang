@@ -360,3 +360,30 @@ delete(mao, "key")
 value, ok = map["key"]
 // ok is boolean which is true if it exists and false if it doesn't
 ```
+*Note*: Using Struct is better than making use of nested Maps which are very complicated. As struct is something we can use as the keys. Known schema (users, products, orders, etc.) → Use structs. Unknown or dynamic schema → Use nested maps. 
+- Composite type keys with struct 
+```go
+type ScoreCard struct {
+    Place, Team string
+}
+
+matches := make(map[ScoreCard]int)
+
+// Keys are matched with each value passed in struct
+matches[ScoreCard{"Oklahoma", "Austin"}]++
+matches[ScoreCard{"Oklahoma", "Dallas"}]++
+matches[ScoreCard{"NYC", "Yorkers"}]++
+```
+*Note*: If a key doesn't exist and we try to access it then we get 0.
+- Nested Maps syntax
+```go
+nestedMap := make(map[string]map[string]int)
+
+// Without this it will panic (Its a runtime error)
+if nestedMap["Oklahoma"] == nil {
+	nestedMap["Oklahoma"] = make(map[string]int)
+}
+
+// For accessing and updation
+nestedMap["Oklahoma"]["Austin"]++
+```
