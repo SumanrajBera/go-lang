@@ -375,7 +375,8 @@ matches[ScoreCard{"Oklahoma", "Dallas"}]++
 matches[ScoreCard{"NYC", "Yorkers"}]++
 ```
 *Note*: If a key doesn't exist and we try to access it then we get 0.
-- Nested Maps syntax
+
+### Nested Maps syntax
 ```go
 nestedMap := make(map[string]map[string]int)
 
