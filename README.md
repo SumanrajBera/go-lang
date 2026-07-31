@@ -388,3 +388,10 @@ if nestedMap["Oklahoma"] == nil {
 // For accessing and updation
 nestedMap["Oklahoma"]["Austin"]++
 ```
+
+## Advanced Functions
+- Functions are **first-class citizens** meaning they can be used as variables.
+- **Higher-order functions** are the functions that return a function or take function as an argument.
+- **Function currying** is a technique in which we take function as an input and return a new function as output.
+- *defer* keyword is used to execute a function at the end of current executing function. Mostly used for cleanups.
+- **Closures** are used for preserving states. They work in a way that when there is an inner which can access the variables of an outer function. 
