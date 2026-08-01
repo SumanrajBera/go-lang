@@ -395,3 +395,20 @@ nestedMap["Oklahoma"]["Austin"]++
 - **Function currying** is a technique in which we take function as an input and return a new function as output.
 - *defer* keyword is used to execute a function at the end of current executing function. Mostly used for cleanups.
 - **Closures** are used for preserving states. They work in a way that when there is an inner which can access the variables of an outer function. 
+
+## Pointers
+- `&` (address-of operator) returns the memory address of a variable.
+- `*` (dereference operator) accesses or modifies the value stored at the address held by a pointer.
+
+```go
+x := 5
+
+p := &x // p stores the address of x
+
+fmt.Println(p)  // Address stored in p
+fmt.Println(*p) // Value stored at that address (5)
+
+*p = 10         // Modify the value at that address
+fmt.Println(x)  // 10
+```
+*Note*: If a pointer points to nothing then its zero value or say default value is **nil**
