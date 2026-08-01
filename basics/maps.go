@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func maps() {
 	ages := make(map[string]int)
 	// Assigning
 	ages["John"] = 20
