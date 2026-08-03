@@ -412,3 +412,19 @@ fmt.Println(*p) // Value stored at that address (5)
 fmt.Println(x)  // 10
 ```
 *Note*: If a pointer points to nothing then its zero value or say default value is **nil**
+
+## Packages
+- A package is simply a collection of related Go files that work together.
+*Note*: We cannot have different packages in same folder
+- The package name must be the **directory name** because that is how we import and in `go.mod` we need to mention the module we want
+```
+D:.
+│   arithmetic.go
+│   go.mod
+│   
+└───packages
+        sum.go
+For the above structure we need in go.mod file we must have: module packageInGO
+So we can import: import "packageInGO/packages"
+```
+**Note:** `package main` is a special package in Go. It marks an executable program and must contain a `main()` function, which is the program's entry point. Unlike most packages, its name is always `main`, regardless of the directory name.
