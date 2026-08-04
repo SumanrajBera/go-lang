@@ -428,3 +428,10 @@ For the above structure we need in go.mod file we must have: module packageInGO
 So we can import: import "packageInGO/packages"
 ```
 **Note:** `package main` is a special package in Go. It marks an executable program and must contain a `main()` function, which is the program's entry point. Unlike most packages, its name is always `main`, regardless of the directory name.
+
+*Note*: So function which we want to export needs to have uppercase letter at start. GO doesn't have a proper export keyword.
+
+### Modules
+- **Modules**: A module is a collection of related packages that are versioned together.
+- **Module Location**: There can be only one module per project directory tree, and its go.mod file must reside strictly in the root directory.
+- **Module Initialization**: To initialize a directory as a module, use the command go mod init <module-path> (where <module-path> is the import path, such as ://github.com or a simple name like myproject).
