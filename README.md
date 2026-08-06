@@ -435,3 +435,11 @@ So we can import: import "packageInGO/packages"
 - **Modules**: A module is a collection of related packages that are versioned together.
 - **Module Location**: There can be only one module per project directory tree, and its go.mod file must reside strictly in the root directory.
 - **Module Initialization**: To initialize a directory as a module, use the command go mod init <module-path> (where <module-path> is the import path, such as ://github.com or a simple name like myproject).
+
+### Commands for package and modules
+- `go mod tidy` - This command is used for packages that have been imported but not mentioned in the mod file. 
+- `replace <module_name> => <local_path>` - This command is used for development for files that aren't pushed to github and use them instead.
+- `go mod init <module_name>` - This command is used for initialising module
+- `got get <module_name>` - To automatically add our packages so that they can be used.
+
+*Note*: `go.sum` is the alternative to package-lock.json which is used for making sure correct version dependencies are used.
