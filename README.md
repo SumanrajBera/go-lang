@@ -435,6 +435,7 @@ So we can import: import "packageInGO/packages"
 - **Modules**: A module is a collection of related packages that are versioned together.
 - **Module Location**: There can be only one module per project directory tree, and its go.mod file must reside strictly in the root directory.
 - **Module Initialization**: To initialize a directory as a module, use the command go mod init <module-path> (where <module-path> is the import path, such as ://github.com or a simple name like myproject).
+*Note*: Modules make packages importable across projects. So if you want to export a package external you need to make sure it has a `go.mod` file
 
 ### Commands for package and modules
 - `go mod tidy` - This command is used for packages that have been imported but not mentioned in the mod file. 
