@@ -1,9 +1,10 @@
 package main
 
 import (
+	"fmt"
+	"github.com/SumanrajBera/reverseString"
 	"github.com/common-nighthawk/go-figure"
 	"github.com/google/uuid"
-	"fmt"
 )
 
 func main() {
@@ -12,4 +13,7 @@ func main() {
 
 	id := uuid.New()
 	fmt.Println(id)
+
+	str := "Hello World"
+	fmt.Println(reversestring.Reverse(str))
 }
