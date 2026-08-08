@@ -442,5 +442,6 @@ So we can import: import "packageInGO/packages"
 - `replace <module_name> => <local_path>` - This command is used for development for files that aren't pushed to github and use them instead.
 - `go mod init <module_name>` - This command is used for initialising module
 - `got get <module_name>` - To automatically add our packages so that they can be used.
+- `cat go.mod` - This command can be used to see the contents of the `go.mod` file.
 
 *Note*: `go.sum` is the alternative to package-lock.json which is used for making sure correct version dependencies are used.
