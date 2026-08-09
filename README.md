@@ -445,3 +445,5 @@ So we can import: import "packageInGO/packages"
 - `cat go.mod` - This command can be used to see the contents of the `go.mod` file.
 
 *Note*: `go.sum` is the alternative to package-lock.json which is used for making sure correct version dependencies are used.
+
+## Channels and concurrency
