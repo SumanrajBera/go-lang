@@ -447,3 +447,5 @@ So we can import: import "packageInGO/packages"
 *Note*: `go.sum` is the alternative to package-lock.json which is used for making sure correct version dependencies are used.
 
 ## Channels and concurrency
+- **Synchronous code**: This code executes in order from top to bottom line-by-line. Its not the most efficient for writing optimised code.
+- **Concurrent code**: Instead of executing one task completely before moving to the next, we can have multiple tasks in progress at the same time. When one task is waiting for something, such as a network or database response, another task can make progress. This allows us to reduce unnecessary waiting and use our resources more efficiently.
