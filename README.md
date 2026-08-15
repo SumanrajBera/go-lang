@@ -449,3 +449,31 @@ So we can import: import "packageInGO/packages"
 ## Channels and concurrency
 - **Synchronous code**: This code executes in order from top to bottom line-by-line. Its not the most efficient for writing optimised code.
 - **Concurrent code**: Instead of executing one task completely before moving to the next, we can have multiple tasks in progress at the same time. When one task is waiting for something, such as a network or database response, another task can make progress. This allows us to reduce unnecessary waiting and use our resources more efficiently.
+  
+### Routines
+- So routines in go are specified threads which allows our task to run concurrently and is specified using keyword `go`
+- Example
+```go
+
+func emailingWithGroup(sender string, receiver string, wg *sync.WaitGroup) {
+	wg.Add(1)
+    // This occurs in different routine then the current
+	go func() {
+		defer wg.Done()
+		time.Sleep(250 * time.Millisecond)
+		fmt.Printf("Email received from %s \n", receiver)
+	}()
+
+	fmt.Printf("Email sent from %s \n", sender)
+}
+```
+- To make sure our other routines are completed befoe main completes its execution we can use a method from `sync` package which is `WaitGroup` which is a counter and has three things (Add, Done and Wait) which allows main to continue to stay alive until the routines complete their execution. It is passed using pointer.
+```go
+var wg sync.WaitGroup
+// This adds 1 to the counter which can indicate a single routine
+wg.Add(1)
+// This tells to remove that 1 which means the current routine completed
+wg.Done()
+// This allows our main function to prolong so that until counter becomes it doesn't complete its execution
+wg.Wait()
+```
