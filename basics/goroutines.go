@@ -26,7 +26,7 @@ func emailingWithGroup(sender string, receiver string, wg *sync.WaitGroup) {
 	fmt.Printf("Email sent from %s \n", sender)
 }
 
-func main() {
+func goRoutines() {
 	// Here sleep is a good method but the problem is in real-world we don't have specified time here we are stopping the current routine for 500ms to ensure It is all processed. But if we don't do that what happens is main completes execution and extra routines doesn't even print as main has exited.
 	emailing("Samule", "Jackson")
 	time.Sleep(500 * time.Millisecond)
