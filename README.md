@@ -479,3 +479,9 @@ wg.Wait()
 ```
 
 ### Channels
+- Channels allow goroutines to communicate values/results that create dependencies between pieces of work.
+- It is a type which can be created `chan` keyword and the data that we want to pass must be sent using `<-` operator which allows the data to flow in the direction we are pointing.
+```go
+processOrder := make(chan Order) // Channel with Order as type
+processOrder <- order // Passing order into channel (Here we can create a go routine which allows to process values passed to channel)
+```
