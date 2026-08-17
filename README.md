@@ -477,3 +477,5 @@ wg.Done()
 // This allows our main function to prolong so that until counter becomes it doesn't complete its execution
 wg.Wait()
 ```
+
+### Channels
