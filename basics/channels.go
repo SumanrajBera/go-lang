@@ -12,7 +12,7 @@ type Order struct {
 	PaymentVerified bool
 }
 
-func main() {
+func channels() {
 	verifyPayment := make(chan *Order)
 	processOrder := make(chan *Order)
 	shipOrder := make(chan *Order)
