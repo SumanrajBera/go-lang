@@ -486,3 +486,12 @@ processOrder := make(chan Order) // Channel with Order as type
 processOrder <- order // Passing order into channel (Here we can create a go routine which allows to process values passed to channel)
 ```
 *Note*: An **unbuffered** channel's (no storage) requires the sender and receiver to synchronize, so a send waits until someone receives it. A **buffered** channel has a fixed capacity, so sent values can remain in the buffer until a receiver consumes them, acting like a bounded queue.
+
+- To check if a channel is closed we can use the type assertion technique with simple modification
+```go
+v, ok := <- ch // ok will return false if the channel is closed  or if its empty (buffered channel)
+```
+- We can close a channel to indicate that we are done with the channel
+```go
+close(ch)
+```
