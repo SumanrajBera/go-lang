@@ -495,3 +495,24 @@ v, ok := <- ch // ok will return false if the channel is closed  or if its empty
 ```go
 close(ch)
 ```
+### Select (swicth statement for channels)
+- `select` is the switch statement execlusive to channels.
+- We use `select` when a Goroutine needs to wait on multiple asynchronous operations.
+```go
+for {
+	select {
+		case val, ok := <- firstChan { 
+			if !ok {
+				return
+    		}
+			fmt.Println(val)
+        }
+		case val, ok := <- secondChan {
+			if !ok {
+				return
+    		}
+			fmt.Println(val)
+        }
+    }
+}
+```
