@@ -516,3 +516,5 @@ for {
     }
 }
 ```
+- We can also use **default** case which allows us to do something if no channel is ready.
+- If all channels are ready go uses a random generator to decide which case to execute.  
