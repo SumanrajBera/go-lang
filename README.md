@@ -529,8 +529,7 @@ func readChannel(ch <-chan int) {
 }
 
 // Write-only channel
-func writeChannel(val int, ch chan<- int, wg *sync.WaitGroup) {
+func writeChannel(val int, ch chan<- int) {
 	ch <- val
-	wg.Done()
 }
 ```
