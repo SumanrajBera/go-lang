@@ -517,4 +517,20 @@ for {
 }
 ```
 - We can also use **default** case which allows us to do something if no channel is ready.
-- If all channels are ready go uses a random generator to decide which case to execute.  
+- If all channels are ready go uses a random generator to decide which case to execute.
+  
+### Read-only and Write-only channels
+- Read-only and Write-only are only used for reading or writing from and to the channel
+```go
+// Read-only channel
+func readChannel(ch <-chan int) {
+	val := <-ch
+	fmt.Println("The value in channel:", val)
+}
+
+// Write-only channel
+func writeChannel(val int, ch chan<- int, wg *sync.WaitGroup) {
+	ch <- val
+	wg.Done()
+}
+```
