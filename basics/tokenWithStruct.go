@@ -24,7 +24,7 @@ func testToken(numDBs int) {
 	fmt.Println("=====================================")
 }
 
-func main() {
+func tokenWithStruct() {
 	testToken(3)
 	testToken(4)
 	testToken(5)
