@@ -533,3 +533,7 @@ func writeChannel(val int, ch chan<- int) {
 	ch <- val
 }
 ```
+## Mutexes
+- A `mutex` stands for Mutual Exclusion which means we are agreeing to mutually exclude something.
+- This is used for synchronisation and avoiding data race condition which happens when two routines try to modify same data structure at same time.
+- With mutexes we can lock and unlock the data structure so that other routines can't access it until the mutex's lock isn't unlocked.
