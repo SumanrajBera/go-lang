@@ -544,3 +544,21 @@ mux.Lock()
 // To unlock a part of code
 mux.Unlock()
 ```
+
+### RWMutex
+- This is part of the same package but comes with some extra locks and unlocks for reading and writing as the name suggests.
+- The following are the locks and unlocks tha come with **RWMutex**
+  - RLock - This is used for locking from writing so that until its released no routines can write in the locked resource. This locked can be shared simulatneously by multiple routines which means until each one is released we can't write.
+  - RUnlock - This is used for unlocking RLock.
+  - Lock - This is used for locking reading and writing for other routines and once released then only can other routines use the resouces.
+  - Unlock - This is used for unlocking Lock.
+- We can run into deadlocks if we're not careful. For example, if a goroutine holds an RLock() and then tries to acquire Lock(), Lock() will block waiting for the read lock to be released. However, the goroutine can't reach RUnlock() because it's blocked on Lock(), resulting in a deadlock.
+```go
+rw.RLock() // Suppose we RLock here
+
+// Then we try to acquire the write lock in the same goroutine
+rw.Lock() // Blocks because the RLock must be released first, but this goroutine is stuck here and can't reach RUnlock()
+
+rw.RUnlock() // Never reached
+```
+*Note*: The `mutex` is just a way to implement synchronisation but if we are not using it we can still run into some data race conditions. Example, if one routine uses mutex and other doesn't and they both are trying to update it we run into data race condition.
