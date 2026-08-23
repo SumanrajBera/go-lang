@@ -562,3 +562,5 @@ rw.Lock() // Blocks because the RLock must be released first, but this goroutine
 rw.RUnlock() // Never reached
 ```
 *Note*: The `mutex` is just a way to implement synchronisation but if we are not using it we can still run into some data race conditions. Example, if one routine uses mutex and other doesn't and they both are trying to update it we run into data race condition.
+
+## Generics
