@@ -564,3 +564,11 @@ rw.RUnlock() // Never reached
 *Note*: The `mutex` is just a way to implement synchronisation but if we are not using it we can still run into some data race conditions. Example, if one routine uses mutex and other doesn't and they both are trying to update it we run into data race condition.
 
 ## Generics
+- Generics lets us write a function, type, or data structure that works with multiple types without duplicating the implementation.
+```go
+// Here we can use this add function for both int and float
+// If we didn't have generics then we would have to create 2 functions for same task
+func add[T int | float64](a T, b T) T {
+	return a + b
+}
+```
