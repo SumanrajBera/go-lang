@@ -572,3 +572,4 @@ func add[T int | float64](a T, b T) T {
 	return a + b
 }
 ```
+### Contraints
