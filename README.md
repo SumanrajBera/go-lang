@@ -573,3 +573,16 @@ func add[T int | float64](a T, b T) T {
 }
 ```
 ### Contraints
+- Generics let you work with multiple types; constraints define which types are permitted.
+```go
+// Without constraints
+func midElem[T any](arr []T) T {
+	var midIdx int = len(arr) / 2
+	return arr[midIdx]
+}
+
+// With Contraints for accepting int and float64
+func add[T int | float64](a T, b T) T {
+	return a + b
+}
+```
