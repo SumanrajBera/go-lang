@@ -38,7 +38,7 @@ func process4(resource *int, wg *sync.WaitGroup) {
 		*resource++
 	}
 }
-func main() {
+func mutexes() {
 	resource1 := 0
 	resource2 := 0
 	var wg sync.WaitGroup
