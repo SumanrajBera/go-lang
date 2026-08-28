@@ -586,3 +586,14 @@ func add[T int | float64](a T, b T) T {
 	return a + b
 }
 ```
+### Interface Types List
+- We can use T any when we want a generic function to accept any type. If we want to restrict T, we can directly define a constraint such as [T ~string | ~int].
+- However, if we need to use the same constraint across multiple functions, writing it repeatedly would violate the DRY principle.
+- We can instead define a reusable interface as a type constraint and use it across our generic functions.
+```go
+type Ordered interface { ~string | ~int }
+
+func Min[T Ordered](a, b T) T { // ... }
+
+// This allows us to define the constraint once and reuse it wherever needed.
+```
