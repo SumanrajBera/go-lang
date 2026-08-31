@@ -598,3 +598,15 @@ func Min[T Ordered](a, b T) T { // ... }
 // This allows us to define the constraint once and reuse it wherever needed.
 ```
 ### Parametric Constraints
+- We can make use of `interfaces` as a constraint on a type parameter to make sure we only accept types that satisfy (implement) that interface.
+```go
+type store[P product] interface {
+    Sell(P)
+}
+
+type product interface {
+    Price() float64
+    Name() string
+}
+// Here, P can only be a type that satisfies the product interface.
+```
