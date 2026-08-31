@@ -597,3 +597,4 @@ func Min[T Ordered](a, b T) T { // ... }
 
 // This allows us to define the constraint once and reuse it wherever needed.
 ```
+### Parametric Constraints
