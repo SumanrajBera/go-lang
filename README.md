@@ -610,3 +610,4 @@ type product interface {
 }
 // Here, P can only be a type that satisfies the product interface.
 ```
+*Note*: The name of a type parameter can be anything but `T` is a common convention.
