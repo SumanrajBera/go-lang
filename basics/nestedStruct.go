@@ -4,11 +4,11 @@ import "fmt"
 
 type sendMessage struct {
 	message  string
-	sender   user
-	receiver user
+	sender   User
+	receiver User
 }
 
-type user struct {
+type User struct {
 	id   int
 	name string
 }
@@ -21,12 +21,12 @@ func testInNestedStruct(m sendMessage) {
 }
 
 func nestedStruct() {
-	var user1 = user{
+	var user1 = User{
 		id: 12344,
 		name: "Sumanraj",
 	}
 
-	var user2 = user{
+	var user2 = User{
 		id: 12344,
 		name: "Karan",
 	}
