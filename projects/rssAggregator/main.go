@@ -1,22 +1,23 @@
 package main
 
 import (
+	"fmt"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
-	"fmt"
 )
 
 func main() {
 	err := godotenv.Load()
+
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Fatal("Error while loading .env file")
 	}
 
 	portString := os.Getenv("PORT")
 
 	if portString == "" {
-		log.Fatal("PORT is not defined in .env variables")
+		log.Fatal("PORT is not defined in .env")
 	}
 
 	fmt.Println("PORT:", portString)
